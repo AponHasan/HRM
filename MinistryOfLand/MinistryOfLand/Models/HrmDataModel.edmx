@@ -1,0 +1,1338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HRM_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdditionalInfoes">
+          <Key>
+            <PropertyRef Name="AInfID" />
+          </Key>
+          <Property Name="AInfID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JoiningDate" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="LPRDate" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Cadre" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CadreDate" Type="datetime" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AddressType" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="House" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PostOffice" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PoliceStation" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="District" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Awards">
+          <Key>
+            <PropertyRef Name="AwardId" />
+          </Key>
+          <Property Name="AwardId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleOfaward" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Ground" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="ChildrenInfoes">
+          <Key>
+            <PropertyRef Name="ChildrenInfoId" />
+          </Key>
+          <Property Name="ChildrenInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChildrenName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ChildrenDOB" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ChildrenSex" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EducationalInfoes">
+          <Key>
+            <PropertyRef Name="EducationalQId" />
+          </Key>
+          <Property Name="EducationalQId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DegreeTitel" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="InstituteName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PassingYear" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PrincicpalSubject" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Result" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Board" Type="nvarchar" MaxLength="500" />
+          <Property Name="OutOf" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ForeignTravles">
+          <Key>
+            <PropertyRef Name="ForeignTravelId" />
+          </Key>
+          <Property Name="ForeignTravelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Purpuse" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TFrom" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TTo" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GeneralInfoes">
+          <Key>
+            <PropertyRef Name="GeneralInfoID" />
+          </Key>
+          <Property Name="GeneralInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FathersName" Type="nvarchar" MaxLength="500" />
+          <Property Name="MothersName" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+          <Property Name="Nationality" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="NIDNumber" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="BloodGroup" Type="nvarchar" MaxLength="500" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CellPhone" Type="nvarchar" MaxLength="500" />
+          <Property Name="Religion" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="PresentAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PermanentAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HomeDistrict" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="MarialStatus" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="SpouseName" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpouseOccopation" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpouseDesignation" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpouseHomeDistrict" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpouseOrganization" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpouseOrgLocation" Type="nvarchar" MaxLength="500" />
+          <Property Name="JoiningDate" Type="datetime" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="500" />
+          <Property Name="Position" Type="nvarchar" MaxLength="500" />
+          <Property Name="LPRDate" Type="datetime" />
+          <Property Name="Cadre" Type="nvarchar" MaxLength="500" />
+          <Property Name="CadreDate" Type="datetime" />
+          <Property Name="CadreBatch" Type="nvarchar" MaxLength="500" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LanguageInfoes">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReadSkills" Type="nvarchar" MaxLength="500" />
+          <Property Name="WriteSkills" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpeakSkills" Type="nvarchar" MaxLength="500" />
+          <Property Name="Userid" Type="int" Nullable="false" />
+          <Property Name="Language" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="OthersServices">
+          <Key>
+            <PropertyRef Name="OthersSId" />
+          </Key>
+          <Property Name="OthersSId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="NameOfEmployee" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="TypeOfService" Type="nvarchar" MaxLength="500" />
+          <Property Name="Position" Type="nvarchar" MaxLength="500" />
+          <Property Name="SFrom" Type="nvarchar" MaxLength="500" />
+          <Property Name="STo" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="PostingAddresses">
+          <Key>
+            <PropertyRef Name="PaId" />
+          </Key>
+          <Property Name="PaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Organization" Type="nvarchar" MaxLength="500" />
+          <Property Name="Country" Type="nvarchar" MaxLength="500" />
+          <Property Name="PaFom" Type="nvarchar" MaxLength="500" />
+          <Property Name="PaTo" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="PostingRecords">
+          <Key>
+            <PropertyRef Name="PostingId" />
+          </Key>
+          <Property Name="PostingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Organization" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Location" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Thana" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="District" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Pfrom" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PTo" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PayScal" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PostingDate" Type="datetime" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="500" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PromotionalParticulars">
+          <Key>
+            <PropertyRef Name="PromotionalParticularId" />
+          </Key>
+          <Property Name="PromotionalParticularId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="500" />
+          <Property Name="Promotion" Type="nvarchar" MaxLength="500" />
+          <Property Name="GODate" Type="datetime" />
+          <Property Name="NaturalOfPromotion" Type="nvarchar" MaxLength="500" />
+          <Property Name="PayScal" Type="nvarchar" MaxLength="500" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PromotionalPs">
+          <Key>
+            <PropertyRef Name="PromotionalPId" />
+          </Key>
+          <Property Name="PromotionalPId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Promotion" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="GODate" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="NaturalOFPromotion" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PayScal" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Publications">
+          <Key>
+            <PropertyRef Name="PublicationId" />
+          </Key>
+          <Property Name="PublicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BooksTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Periodicals" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Monograph" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Journal" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceHistories">
+          <Key>
+            <PropertyRef Name="SHId" />
+          </Key>
+          <Property Name="SHId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GovtServiceDate" Type="datetime" Nullable="false" />
+          <Property Name="GazetteDate" Type="datetime" Nullable="false" />
+          <Property Name="SeniorDate" Type="datetime" />
+          <Property Name="Encaderment" Type="nvarchar" MaxLength="500" />
+          <Property Name="CadreBCS" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TrainingInfoes">
+          <Key>
+            <PropertyRef Name="TrainingId" />
+          </Key>
+          <Property Name="TrainingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TrainingLocation" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Course" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Institute" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Grade" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="TrainingType" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="UserAccounts">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserImage" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_AdditionalInfo_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="AdditionalInfoes" Type="Self.AdditionalInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="AdditionalInfoes">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Award_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="0..1" />
+          <End Role="Awards" Type="Self.Awards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Awards">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChildrenInfo_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="ChildrenInfoes" Type="Self.ChildrenInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="ChildrenInfoes">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EducationalInfo_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="EducationalInfoes" Type="Self.EducationalInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="EducationalInfoes">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ForeignTravle_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="ForeignTravles" Type="Self.ForeignTravles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="ForeignTravles">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeneralInfo_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="GeneralInfoes" Type="Self.GeneralInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="GeneralInfoes">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LanguageInfo_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="LanguageInfoes" Type="Self.LanguageInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="LanguageInfoes">
+              <PropertyRef Name="Userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OthersService_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="OthersServices" Type="Self.OthersServices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="OthersServices">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostingAddress_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="PostingAddresses" Type="Self.PostingAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PostingAddresses">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostingRecords_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="PostingRecords" Type="Self.PostingRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PostingRecords">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromotionalP_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="PromotionalPs" Type="Self.PromotionalPs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PromotionalPs">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromotionalParticular_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="PromotionalParticulars" Type="Self.PromotionalParticulars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PromotionalParticulars">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Publication_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="Publications" Type="Self.Publications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Publications">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceHistory_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="ServiceHistories" Type="Self.ServiceHistories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="ServiceHistories">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingInfo_UserAccount">
+          <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+          <End Role="TrainingInfoes" Type="Self.TrainingInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccounts">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="TrainingInfoes">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HRM_DatabaseModelStoreContainer">
+          <EntitySet Name="AdditionalInfoes" EntityType="Self.AdditionalInfoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Awards" EntityType="Self.Awards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChildrenInfoes" EntityType="Self.ChildrenInfoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EducationalInfoes" EntityType="Self.EducationalInfoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ForeignTravles" EntityType="Self.ForeignTravles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GeneralInfoes" EntityType="Self.GeneralInfoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LanguageInfoes" EntityType="Self.LanguageInfoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OthersServices" EntityType="Self.OthersServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostingAddresses" EntityType="Self.PostingAddresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostingRecords" EntityType="Self.PostingRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PromotionalParticulars" EntityType="Self.PromotionalParticulars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PromotionalPs" EntityType="Self.PromotionalPs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publications" EntityType="Self.Publications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceHistories" EntityType="Self.ServiceHistories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrainingInfoes" EntityType="Self.TrainingInfoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccounts" EntityType="Self.UserAccounts" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AdditionalInfo_UserAccount" Association="Self.FK_AdditionalInfo_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="AdditionalInfoes" EntitySet="AdditionalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Award_UserAccount" Association="Self.FK_Award_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="Awards" EntitySet="Awards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChildrenInfo_UserAccount" Association="Self.FK_ChildrenInfo_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="ChildrenInfoes" EntitySet="ChildrenInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EducationalInfo_UserAccount" Association="Self.FK_EducationalInfo_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="EducationalInfoes" EntitySet="EducationalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ForeignTravle_UserAccount" Association="Self.FK_ForeignTravle_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="ForeignTravles" EntitySet="ForeignTravles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeneralInfo_UserAccount" Association="Self.FK_GeneralInfo_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="GeneralInfoes" EntitySet="GeneralInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LanguageInfo_UserAccount" Association="Self.FK_LanguageInfo_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="LanguageInfoes" EntitySet="LanguageInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OthersService_UserAccount" Association="Self.FK_OthersService_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="OthersServices" EntitySet="OthersServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostingAddress_UserAccount" Association="Self.FK_PostingAddress_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="PostingAddresses" EntitySet="PostingAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostingRecords_UserAccount" Association="Self.FK_PostingRecords_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="PostingRecords" EntitySet="PostingRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromotionalP_UserAccount" Association="Self.FK_PromotionalP_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="PromotionalPs" EntitySet="PromotionalPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromotionalParticular_UserAccount" Association="Self.FK_PromotionalParticular_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="PromotionalParticulars" EntitySet="PromotionalParticulars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Publication_UserAccount" Association="Self.FK_Publication_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="Publications" EntitySet="Publications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceHistory_UserAccount" Association="Self.FK_ServiceHistory_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="ServiceHistories" EntitySet="ServiceHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingInfo_UserAccount" Association="Self.FK_TrainingInfo_UserAccount">
+            <End Role="UserAccounts" EntitySet="UserAccounts" />
+            <End Role="TrainingInfoes" EntitySet="TrainingInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRM_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HRM_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdditionalInfoes" EntityType="HRM_DatabaseModel.AdditionalInfo" />
+          <EntitySet Name="Addresses" EntityType="HRM_DatabaseModel.Address" />
+          <EntitySet Name="Awards" EntityType="HRM_DatabaseModel.Award" />
+          <EntitySet Name="ChildrenInfoes" EntityType="HRM_DatabaseModel.ChildrenInfo" />
+          <EntitySet Name="EducationalInfoes" EntityType="HRM_DatabaseModel.EducationalInfo" />
+          <EntitySet Name="ForeignTravles" EntityType="HRM_DatabaseModel.ForeignTravle" />
+          <EntitySet Name="GeneralInfoes" EntityType="HRM_DatabaseModel.GeneralInfo" />
+          <EntitySet Name="LanguageInfoes" EntityType="HRM_DatabaseModel.LanguageInfo" />
+          <EntitySet Name="OthersServices" EntityType="HRM_DatabaseModel.OthersService" />
+          <EntitySet Name="PostingAddresses" EntityType="HRM_DatabaseModel.PostingAddress" />
+          <EntitySet Name="PostingRecords" EntityType="HRM_DatabaseModel.PostingRecord" />
+          <EntitySet Name="PromotionalParticulars" EntityType="HRM_DatabaseModel.PromotionalParticular" />
+          <EntitySet Name="PromotionalPs" EntityType="HRM_DatabaseModel.PromotionalP" />
+          <EntitySet Name="Publications" EntityType="HRM_DatabaseModel.Publication" />
+          <EntitySet Name="ServiceHistories" EntityType="HRM_DatabaseModel.ServiceHistory" />
+          <EntitySet Name="sysdiagrams" EntityType="HRM_DatabaseModel.sysdiagram" />
+          <EntitySet Name="TrainingInfoes" EntityType="HRM_DatabaseModel.TrainingInfo" />
+          <EntitySet Name="UserAccounts" EntityType="HRM_DatabaseModel.UserAccount" />
+          <AssociationSet Name="FK_AdditionalInfo_UserAccount" Association="HRM_DatabaseModel.FK_AdditionalInfo_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="AdditionalInfo" EntitySet="AdditionalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Award_UserAccount" Association="HRM_DatabaseModel.FK_Award_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Award" EntitySet="Awards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChildrenInfo_UserAccount" Association="HRM_DatabaseModel.FK_ChildrenInfo_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="ChildrenInfo" EntitySet="ChildrenInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EducationalInfo_UserAccount" Association="HRM_DatabaseModel.FK_EducationalInfo_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="EducationalInfo" EntitySet="EducationalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ForeignTravle_UserAccount" Association="HRM_DatabaseModel.FK_ForeignTravle_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="ForeignTravle" EntitySet="ForeignTravles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeneralInfo_UserAccount" Association="HRM_DatabaseModel.FK_GeneralInfo_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="GeneralInfo" EntitySet="GeneralInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LanguageInfo_UserAccount" Association="HRM_DatabaseModel.FK_LanguageInfo_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="LanguageInfo" EntitySet="LanguageInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OthersService_UserAccount" Association="HRM_DatabaseModel.FK_OthersService_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="OthersService" EntitySet="OthersServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostingAddress_UserAccount" Association="HRM_DatabaseModel.FK_PostingAddress_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="PostingAddress" EntitySet="PostingAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostingRecords_UserAccount" Association="HRM_DatabaseModel.FK_PostingRecords_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="PostingRecord" EntitySet="PostingRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromotionalParticular_UserAccount" Association="HRM_DatabaseModel.FK_PromotionalParticular_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="PromotionalParticular" EntitySet="PromotionalParticulars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromotionalP_UserAccount" Association="HRM_DatabaseModel.FK_PromotionalP_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="PromotionalP" EntitySet="PromotionalPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Publication_UserAccount" Association="HRM_DatabaseModel.FK_Publication_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Publication" EntitySet="Publications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceHistory_UserAccount" Association="HRM_DatabaseModel.FK_ServiceHistory_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="ServiceHistory" EntitySet="ServiceHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrainingInfo_UserAccount" Association="HRM_DatabaseModel.FK_TrainingInfo_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="TrainingInfo" EntitySet="TrainingInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AdditionalInfo">
+          <Key>
+            <PropertyRef Name="AInfID" />
+          </Key>
+          <Property Name="AInfID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JoiningDate" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Rank" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LPRDate" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Cadre" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CadreDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_AdditionalInfo_UserAccount" FromRole="AdditionalInfo" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressType" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="House" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PostOffice" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PoliceStation" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="AwardId" />
+          </Key>
+          <Property Name="AwardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleOfaward" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Ground" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_Award_UserAccount" FromRole="Award" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="ChildrenInfo">
+          <Key>
+            <PropertyRef Name="ChildrenInfoId" />
+          </Key>
+          <Property Name="ChildrenInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChildrenName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ChildrenDOB" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ChildrenSex" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_ChildrenInfo_UserAccount" FromRole="ChildrenInfo" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="EducationalInfo">
+          <Key>
+            <PropertyRef Name="EducationalQId" />
+          </Key>
+          <Property Name="EducationalQId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DegreeTitel" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="InstituteName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PassingYear" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PrincicpalSubject" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Result" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Board" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OutOf" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_EducationalInfo_UserAccount" FromRole="EducationalInfo" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="ForeignTravle">
+          <Key>
+            <PropertyRef Name="ForeignTravelId" />
+          </Key>
+          <Property Name="ForeignTravelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Purpuse" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TFrom" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TTo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_ForeignTravle_UserAccount" FromRole="ForeignTravle" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="GeneralInfo">
+          <Key>
+            <PropertyRef Name="GeneralInfoID" />
+          </Key>
+          <Property Name="GeneralInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FathersName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MothersName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nationality" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NIDNumber" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BloodGroup" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPhone" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CellPhone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Religion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PresentAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PermanentAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HomeDistrict" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MarialStatus" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseOccopation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseDesignation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseHomeDistrict" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseOrganization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseOrgLocation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+          <Property Name="Rank" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LPRDate" Type="DateTime" Precision="3" />
+          <Property Name="Cadre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CadreDate" Type="DateTime" Precision="3" />
+          <Property Name="CadreBatch" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_GeneralInfo_UserAccount" FromRole="GeneralInfo" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="LanguageInfo">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReadSkills" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="WriteSkills" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpeakSkills" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Userid" Type="Int32" Nullable="false" />
+          <Property Name="Language" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_LanguageInfo_UserAccount" FromRole="LanguageInfo" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="OthersService">
+          <Key>
+            <PropertyRef Name="OthersSId" />
+          </Key>
+          <Property Name="OthersSId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="NameOfEmployee" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeOfService" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SFrom" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="STo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_OthersService_UserAccount" FromRole="OthersService" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="PostingAddress">
+          <Key>
+            <PropertyRef Name="PaId" />
+          </Key>
+          <Property Name="PaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Post" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Organization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PaFom" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PaTo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_PostingAddress_UserAccount" FromRole="PostingAddress" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="PostingRecord">
+          <Key>
+            <PropertyRef Name="PostingId" />
+          </Key>
+          <Property Name="PostingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Organization" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thana" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Pfrom" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PTo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PayScal" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PostingDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Country" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_PostingRecords_UserAccount" FromRole="PostingRecord" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="PromotionalParticular">
+          <Key>
+            <PropertyRef Name="PromotionalParticularId" />
+          </Key>
+          <Property Name="PromotionalParticularId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rank" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Promotion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GODate" Type="DateTime" Precision="3" />
+          <Property Name="NaturalOfPromotion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PayScal" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_PromotionalParticular_UserAccount" FromRole="PromotionalParticular" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="PromotionalP">
+          <Key>
+            <PropertyRef Name="PromotionalPId" />
+          </Key>
+          <Property Name="PromotionalPId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rank" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Promotion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GODate" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NaturalOFPromotion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PayScal" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_PromotionalP_UserAccount" FromRole="PromotionalP" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="Publication">
+          <Key>
+            <PropertyRef Name="PublicationId" />
+          </Key>
+          <Property Name="PublicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BooksTitle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Periodicals" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Monograph" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Journal" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_Publication_UserAccount" FromRole="Publication" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="ServiceHistory">
+          <Key>
+            <PropertyRef Name="SHId" />
+          </Key>
+          <Property Name="SHId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="GovtServiceDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GazetteDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SeniorDate" Type="DateTime" Precision="3" />
+          <Property Name="Encaderment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CadreBCS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_ServiceHistory_UserAccount" FromRole="ServiceHistory" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TrainingInfo">
+          <Key>
+            <PropertyRef Name="TrainingId" />
+          </Key>
+          <Property Name="TrainingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TrainingLocation" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Institute" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Grade" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="TrainingType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserAccount" Relationship="HRM_DatabaseModel.FK_TrainingInfo_UserAccount" FromRole="TrainingInfo" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AdditionalInfoes" Relationship="HRM_DatabaseModel.FK_AdditionalInfo_UserAccount" FromRole="UserAccount" ToRole="AdditionalInfo" />
+          <NavigationProperty Name="Awards" Relationship="HRM_DatabaseModel.FK_Award_UserAccount" FromRole="UserAccount" ToRole="Award" />
+          <NavigationProperty Name="ChildrenInfoes" Relationship="HRM_DatabaseModel.FK_ChildrenInfo_UserAccount" FromRole="UserAccount" ToRole="ChildrenInfo" />
+          <NavigationProperty Name="EducationalInfoes" Relationship="HRM_DatabaseModel.FK_EducationalInfo_UserAccount" FromRole="UserAccount" ToRole="EducationalInfo" />
+          <NavigationProperty Name="ForeignTravles" Relationship="HRM_DatabaseModel.FK_ForeignTravle_UserAccount" FromRole="UserAccount" ToRole="ForeignTravle" />
+          <NavigationProperty Name="GeneralInfoes" Relationship="HRM_DatabaseModel.FK_GeneralInfo_UserAccount" FromRole="UserAccount" ToRole="GeneralInfo" />
+          <NavigationProperty Name="LanguageInfoes" Relationship="HRM_DatabaseModel.FK_LanguageInfo_UserAccount" FromRole="UserAccount" ToRole="LanguageInfo" />
+          <NavigationProperty Name="OthersServices" Relationship="HRM_DatabaseModel.FK_OthersService_UserAccount" FromRole="UserAccount" ToRole="OthersService" />
+          <NavigationProperty Name="PostingAddresses" Relationship="HRM_DatabaseModel.FK_PostingAddress_UserAccount" FromRole="UserAccount" ToRole="PostingAddress" />
+          <NavigationProperty Name="PostingRecords" Relationship="HRM_DatabaseModel.FK_PostingRecords_UserAccount" FromRole="UserAccount" ToRole="PostingRecord" />
+          <NavigationProperty Name="PromotionalParticulars" Relationship="HRM_DatabaseModel.FK_PromotionalParticular_UserAccount" FromRole="UserAccount" ToRole="PromotionalParticular" />
+          <NavigationProperty Name="PromotionalPs" Relationship="HRM_DatabaseModel.FK_PromotionalP_UserAccount" FromRole="UserAccount" ToRole="PromotionalP" />
+          <NavigationProperty Name="Publications" Relationship="HRM_DatabaseModel.FK_Publication_UserAccount" FromRole="UserAccount" ToRole="Publication" />
+          <NavigationProperty Name="ServiceHistories" Relationship="HRM_DatabaseModel.FK_ServiceHistory_UserAccount" FromRole="UserAccount" ToRole="ServiceHistory" />
+          <NavigationProperty Name="TrainingInfoes" Relationship="HRM_DatabaseModel.FK_TrainingInfo_UserAccount" FromRole="UserAccount" ToRole="TrainingInfo" />
+        </EntityType>
+        <Association Name="FK_AdditionalInfo_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.AdditionalInfo" Role="AdditionalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="AdditionalInfo">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Award_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="0..1" />
+          <End Type="HRM_DatabaseModel.Award" Role="Award" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Award">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChildrenInfo_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.ChildrenInfo" Role="ChildrenInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="ChildrenInfo">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EducationalInfo_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.EducationalInfo" Role="EducationalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="EducationalInfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ForeignTravle_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.ForeignTravle" Role="ForeignTravle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="ForeignTravle">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeneralInfo_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.GeneralInfo" Role="GeneralInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="GeneralInfo">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LanguageInfo_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.LanguageInfo" Role="LanguageInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="LanguageInfo">
+              <PropertyRef Name="Userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OthersService_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.OthersService" Role="OthersService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="OthersService">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostingAddress_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.PostingAddress" Role="PostingAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PostingAddress">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostingRecords_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.PostingRecord" Role="PostingRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PostingRecord">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromotionalParticular_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.PromotionalParticular" Role="PromotionalParticular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PromotionalParticular">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromotionalP_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.PromotionalP" Role="PromotionalP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="PromotionalP">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Publication_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.Publication" Role="Publication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Publication">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceHistory_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.ServiceHistory" Role="ServiceHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="ServiceHistory">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrainingInfo_UserAccount">
+          <End Type="HRM_DatabaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="HRM_DatabaseModel.TrainingInfo" Role="TrainingInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="TrainingInfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRM_DatabaseModelStoreContainer" CdmEntityContainer="HRM_DatabaseEntities">
+          <EntitySetMapping Name="AdditionalInfoes">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.AdditionalInfo">
+              <MappingFragment StoreEntitySet="AdditionalInfoes">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="CadreDate" ColumnName="CadreDate" />
+                <ScalarProperty Name="Cadre" ColumnName="Cadre" />
+                <ScalarProperty Name="LPRDate" ColumnName="LPRDate" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="AInfID" ColumnName="AInfID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.Address">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+                <ScalarProperty Name="PostOffice" ColumnName="PostOffice" />
+                <ScalarProperty Name="House" ColumnName="House" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Awards">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.Award">
+              <MappingFragment StoreEntitySet="Awards">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Ground" ColumnName="Ground" />
+                <ScalarProperty Name="TitleOfaward" ColumnName="TitleOfaward" />
+                <ScalarProperty Name="AwardId" ColumnName="AwardId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChildrenInfoes">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.ChildrenInfo">
+              <MappingFragment StoreEntitySet="ChildrenInfoes">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="ChildrenSex" ColumnName="ChildrenSex" />
+                <ScalarProperty Name="ChildrenDOB" ColumnName="ChildrenDOB" />
+                <ScalarProperty Name="ChildrenName" ColumnName="ChildrenName" />
+                <ScalarProperty Name="ChildrenInfoId" ColumnName="ChildrenInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducationalInfoes">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.EducationalInfo">
+              <MappingFragment StoreEntitySet="EducationalInfoes">
+                <ScalarProperty Name="OutOf" ColumnName="OutOf" />
+                <ScalarProperty Name="Board" ColumnName="Board" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="PrincicpalSubject" ColumnName="PrincicpalSubject" />
+                <ScalarProperty Name="PassingYear" ColumnName="PassingYear" />
+                <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+                <ScalarProperty Name="DegreeTitel" ColumnName="DegreeTitel" />
+                <ScalarProperty Name="EducationalQId" ColumnName="EducationalQId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ForeignTravles">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.ForeignTravle">
+              <MappingFragment StoreEntitySet="ForeignTravles">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="TTo" ColumnName="TTo" />
+                <ScalarProperty Name="TFrom" ColumnName="TFrom" />
+                <ScalarProperty Name="Purpuse" ColumnName="Purpuse" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ForeignTravelId" ColumnName="ForeignTravelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeneralInfoes">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.GeneralInfo">
+              <MappingFragment StoreEntitySet="GeneralInfoes">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="CadreBatch" ColumnName="CadreBatch" />
+                <ScalarProperty Name="CadreDate" ColumnName="CadreDate" />
+                <ScalarProperty Name="Cadre" ColumnName="Cadre" />
+                <ScalarProperty Name="LPRDate" ColumnName="LPRDate" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="SpouseOrgLocation" ColumnName="SpouseOrgLocation" />
+                <ScalarProperty Name="SpouseOrganization" ColumnName="SpouseOrganization" />
+                <ScalarProperty Name="SpouseHomeDistrict" ColumnName="SpouseHomeDistrict" />
+                <ScalarProperty Name="SpouseDesignation" ColumnName="SpouseDesignation" />
+                <ScalarProperty Name="SpouseOccopation" ColumnName="SpouseOccopation" />
+                <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+                <ScalarProperty Name="MarialStatus" ColumnName="MarialStatus" />
+                <ScalarProperty Name="HomeDistrict" ColumnName="HomeDistrict" />
+                <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+                <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="NIDNumber" ColumnName="NIDNumber" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="MothersName" ColumnName="MothersName" />
+                <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GeneralInfoID" ColumnName="GeneralInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LanguageInfoes">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.LanguageInfo">
+              <MappingFragment StoreEntitySet="LanguageInfoes">
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="SpeakSkills" ColumnName="SpeakSkills" />
+                <ScalarProperty Name="WriteSkills" ColumnName="WriteSkills" />
+                <ScalarProperty Name="ReadSkills" ColumnName="ReadSkills" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OthersServices">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.OthersService">
+              <MappingFragment StoreEntitySet="OthersServices">
+                <ScalarProperty Name="STo" ColumnName="STo" />
+                <ScalarProperty Name="SFrom" ColumnName="SFrom" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="TypeOfService" ColumnName="TypeOfService" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="NameOfEmployee" ColumnName="NameOfEmployee" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="OthersSId" ColumnName="OthersSId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostingAddresses">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.PostingAddress">
+              <MappingFragment StoreEntitySet="PostingAddresses">
+                <ScalarProperty Name="PaTo" ColumnName="PaTo" />
+                <ScalarProperty Name="PaFom" ColumnName="PaFom" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PaId" ColumnName="PaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostingRecords">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.PostingRecord">
+              <MappingFragment StoreEntitySet="PostingRecords">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+                <ScalarProperty Name="PayScal" ColumnName="PayScal" />
+                <ScalarProperty Name="PTo" ColumnName="PTo" />
+                <ScalarProperty Name="Pfrom" ColumnName="Pfrom" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Thana" ColumnName="Thana" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="PostingId" ColumnName="PostingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PromotionalParticulars">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.PromotionalParticular">
+              <MappingFragment StoreEntitySet="PromotionalParticulars">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="PayScal" ColumnName="PayScal" />
+                <ScalarProperty Name="NaturalOfPromotion" ColumnName="NaturalOfPromotion" />
+                <ScalarProperty Name="GODate" ColumnName="GODate" />
+                <ScalarProperty Name="Promotion" ColumnName="Promotion" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="PromotionalParticularId" ColumnName="PromotionalParticularId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PromotionalPs">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.PromotionalP">
+              <MappingFragment StoreEntitySet="PromotionalPs">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="PayScal" ColumnName="PayScal" />
+                <ScalarProperty Name="NaturalOFPromotion" ColumnName="NaturalOFPromotion" />
+                <ScalarProperty Name="GODate" ColumnName="GODate" />
+                <ScalarProperty Name="Promotion" ColumnName="Promotion" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="PromotionalPId" ColumnName="PromotionalPId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publications">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.Publication">
+              <MappingFragment StoreEntitySet="Publications">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Journal" ColumnName="Journal" />
+                <ScalarProperty Name="Monograph" ColumnName="Monograph" />
+                <ScalarProperty Name="Periodicals" ColumnName="Periodicals" />
+                <ScalarProperty Name="BooksTitle" ColumnName="BooksTitle" />
+                <ScalarProperty Name="PublicationId" ColumnName="PublicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceHistories">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.ServiceHistory">
+              <MappingFragment StoreEntitySet="ServiceHistories">
+                <ScalarProperty Name="CadreBCS" ColumnName="CadreBCS" />
+                <ScalarProperty Name="Encaderment" ColumnName="Encaderment" />
+                <ScalarProperty Name="SeniorDate" ColumnName="SeniorDate" />
+                <ScalarProperty Name="GazetteDate" ColumnName="GazetteDate" />
+                <ScalarProperty Name="GovtServiceDate" ColumnName="GovtServiceDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SHId" ColumnName="SHId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainingInfoes">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.TrainingInfo">
+              <MappingFragment StoreEntitySet="TrainingInfoes">
+                <ScalarProperty Name="TrainingType" ColumnName="TrainingType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Institute" ColumnName="Institute" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="TrainingLocation" ColumnName="TrainingLocation" />
+                <ScalarProperty Name="TrainingId" ColumnName="TrainingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="HRM_DatabaseModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccounts">
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

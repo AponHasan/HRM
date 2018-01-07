@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MinistryOfLand.Models.GeneralInfo>
+
+@{
+    ViewBag.Title = "DataGenaralInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="clildren-table">
+    <h2>GenaralInfo</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    Date Of Birth
+                </th>
+                <th>
+                    NID Number
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Contact Phone
+                </th>
+                <th>
+                    Religion
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Present Address
+                </th>
+                
+                <th>Action</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserAccount.username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NIDNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContactPhone)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Religion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PresentAddress)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditGeneralInfo", new { id = item.GeneralInfoID }, new { @class = "edita" }) 
+                        @Html.ActionLink("Details", "DetailsGeneralInfo", new { id = item.GeneralInfoID }, new { @class = "details" }) 
+                        @Html.ActionLink("Delete", "DeleteGeneralInfo", new { id = item.GeneralInfoID }, new { @class = "deletea" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>

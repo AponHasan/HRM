@@ -1,0 +1,134 @@
+﻿@model MinistryOfLand.Models.TrainingInfo
+          
+
+@{
+    ViewBag.Title = "EditTraining";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+<div class="col-sm-2">
+
+</div>
+<div class="col-sm-8">
+    <h2>EditTraining</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>TrainingInfo</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.TrainingId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TrainingLocation, new { @class = "control-label col-md-2" })
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Travle From
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TrainingLocation)
+                    @Html.ValidationMessageFor(model => model.TrainingLocation)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Course, new { @class = "control-label col-md-2" })
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Travle From
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Course)
+                    @Html.ValidationMessageFor(model => model.Course)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Travle From
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Institute
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Institute)
+                    @Html.ValidationMessageFor(model => model.Institute)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Grade
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Grade)
+                    @Html.ValidationMessageFor(model => model.Grade)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Position
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Position)
+                    @Html.ValidationMessageFor(model => model.Position)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Country
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Country)
+                    @Html.ValidationMessageFor(model => model.Country)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    User Id
+                </label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.UserId, new { @readonly = "readonly" }) 
+                    @Html.ValidationMessageFor(model => model.UserId)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    TrainingType
+                </label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TrainingType)
+                    @Html.ValidationMessageFor(model => model.TrainingType)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "DataTraining")
+    </div>
+
+
+</div>
+<div class="col-sm-2">
+
+</div>

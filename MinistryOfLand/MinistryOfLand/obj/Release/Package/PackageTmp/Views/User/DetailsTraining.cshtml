@@ -1,0 +1,91 @@
+﻿@model MinistryOfLand.Models.TrainingInfo
+
+@{
+    ViewBag.Title = "DetailsTraining";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details Training</h2>
+
+<div>
+    <h4>Training Info</h4>
+	<hr /> 
+    <dl class="dl-horizontal">
+        <dt>
+            Training Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingLocation)
+        </dd>
+
+        <dt>
+            Course
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course)
+        </dd>
+
+        <dt>
+            Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Institute
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Institute)
+        </dd>
+
+        <dt>
+            Grade
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+        <dt>
+            Position
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt>
+            Country
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            Training Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainingType)
+        </dd>
+
+        <dt>
+            User Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditTraining", new { id = Model.TrainingId }, new { @class = "edita" }) |
+    @Html.ActionLink("Back to List", "DataTraining", new { @class = "bactolist" })
+</p>

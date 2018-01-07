@@ -1,0 +1,97 @@
+﻿@model MinistryOfLand.Models.PromotionalParticular
+@{
+    ViewBag.Title = "PromotionalParticular";
+    
+}
+
+<div class="row">
+    <div class="col-md-2 st">
+
+    </div>
+
+    <div class="col-md-8 ">
+
+
+
+        <div class="con-header">
+            Promotional Particular
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="formbody">
+            @using (Html.BeginForm("PromotionalParticular", "User", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <form class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label for="Name" class="col-sm-4 control-label lbl">
+                            User Name
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.userId)
+                            @Html.DropDownListFor(model => model.userId, @ViewBag.UserAccountId as SelectList, "Select User", new { @class = "from-control inputfil" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="DegreeTitel" class="col-sm-4 control-label lbl">
+                            Rank
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Rank)
+                            @Html.TextBoxFor(model => model.Rank, new { @class = "from-control inputfil", @placeholder = "Rank" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="DegreeTitel" class="col-sm-4 control-label lbl">
+                            Promotion
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Promotion)
+                            @Html.TextBoxFor(model => model.Promotion, new { @class = "from-control inputfil", @placeholder = "Promotion" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="PostingDate" class="col-sm-4 control-label lbl">
+                            G O Date (mm/dd/yyyy)
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.GODate)
+                            @Html.TextBoxFor(model => model.GODate, "{0:yyyy-MM-dd}", new { @class = "from-control inputfil", @placeholder = "(mm/dd/yyyy)", type = "Date" })
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Thana" class="col-sm-4 control-label lbl">
+                            Nature Of Promotion
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.NaturalOfPromotion)
+                            @Html.TextBoxFor(model => model.NaturalOfPromotion, new { @class = "from-control inputfil", @placeholder = "Nature Of Promotion" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="District" class="col-sm-4 control-label lbl">
+                            Pay Scale
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.PayScal)
+                            @Html.TextBoxFor(model => model.PayScal, new { @class = "from-control inputfil", @placeholder = "Pay Scale" })
+                        </div>
+                    </div>                                     
+
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2 text-center" style="margin-bottom:100px;">
+                            <input type="submit" name="submit" class="btn btn-default" value="Submit" style="margin-top: 30px;width: 175px;margin-left: 50px;font-weight:bold;" />
+                        </div>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+    <div class="col-md-2 last">
+
+    </div>
+</div>
+

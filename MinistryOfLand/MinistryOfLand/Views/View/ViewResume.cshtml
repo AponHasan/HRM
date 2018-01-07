@@ -1,0 +1,912 @@
+﻿@model IEnumerable<Object>
+@{
+    ViewBag.Title = "ViewResume";
+    MinistryOfLand.Models.GeneralInfo gi = Model.ToList()[0] as MinistryOfLand.Models.GeneralInfo;
+    
+}
+
+<div class="row">
+    <div class="col-md-2 st">
+
+    </div>
+    @*@using (@Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <b>Search By:</b>
+    @Html.RadioButton("searchBy", "UserId", true) <text>User Id</text>
+    @Html.TextBox("search") <input type="submit" value="search" />
+}*@
+
+    <div class="col-md-8 ">
+        
+            <div class="con-header">
+                General information
+            </div>
+            <div class="under">
+
+            </div>
+            <div class="resumebody">
+                <div class="row">
+                    <div class="col-md-9">
+
+
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <h4>
+                                    Name
+                                </h4>
+                            </div>
+                            <div class="col-md-9">
+                                <h4><span class="badge">@gi.Name</span></h4>
+                            </div>
+                        </div>
+
+
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <h4>
+                                        Father name
+                                    </h4>
+                                </div>
+                                <div class="col-md-9">
+                                    <span class="badge">@gi.FathersName</span>
+                                </div>
+                            </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="col-md-3">
+                                        <h4>
+                                            Mother Name
+                                        </h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <span class="badge">@gi.MothersName</span>
+                                    </div>
+                                </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="col-md-3">
+                                            <h4>
+                                                Date of Birth
+                                            </h4>
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <span class="badge">@gi.DateOfBirth</span>
+                                        </div>
+                                    </div>
+                                       <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <h4>
+                                                    Home District
+                                                </h4>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <span class="badge">@gi.HomeDistrict</span>
+                                            </div>
+                                        </div>
+
+                                          <div class="col-md-12">
+                                                <div class="col-md-3">
+                                                    <h4>
+                                                        Nationality
+                                                    </h4>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <span class="badge">@gi.Nationality</span>
+                                                </div>
+                                            </div>
+
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <h4>
+                                    NID Number
+                                </h4>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="badge">@gi.NIDNumber</span>
+                            </div>
+                        </div>
+
+
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <h4>
+                                        Gender
+                                    </h4>
+                                </div>
+                                <div class="col-md-9">
+                                    <span class="badge">@gi.Gender</span>
+                                </div>
+                            </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="col-md-3">
+                                        <h4>
+                                            Blood Grouph
+                                        </h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <span class="badge">@gi.BloodGroup</span>
+                                    </div>
+                                </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="col-md-3">
+                                            <h4>
+                                                Contact Number
+                                            </h4>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <span class="badge">@gi.ContactPhone</span>
+                                        </div>
+                                    </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <h4>
+                                                    Cell Phone
+                                                </h4>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <span class="badge">@gi.CellPhone</span>
+                                            </div>
+                                        </div>
+
+
+                                            <div class="col-md-12">
+                                                <div class="col-md-3">
+                                                    <h4>
+                                                        Religion
+                                                    </h4>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <span class="badge">@gi.Religion</span>
+                                                </div>
+                                            </div>
+
+
+                                                <div class="col-md-12">
+                                                    <div class="col-md-3">
+                                                        <h4>
+                                                            Email
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <span class="badge">@gi.Email</span>
+                                                    </div>
+                                                </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3">
+                                                            <h4>
+                                                                Present Address
+                                                            </h4>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <span class="badge">@gi.PresentAddress</span>
+                                                        </div>
+                                                    </div>
+
+
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-3">
+                                                                <h4>
+                                                                    PermanentAddress
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <span class="badge">@gi.PermanentAddress</span>
+                                                            </div>
+                                                        </div>
+
+
+                                                            <div class="col-md-12">
+                                                                <div class="col-md-3">
+                                                                    <h4>
+                                                                        HomeDistrict
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <span class="badge">@gi.HomeDistrict</span>
+                                                                </div>
+                                                            </div>
+
+
+                                                                <div class="col-md-12">
+                                                                    <div class="col-md-3">
+                                                                        <h4>
+                                                                            MarialStatus
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <span class="badge">@gi.MarialStatus</span>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+ 
+                    <div class="col-md-3">
+                        <div class="resumephoto">
+                            <img src="~/Content/Image/baby.jpg" class="img-thumbnail" width="200" height="230" />
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+
+        <div class="con-header">
+            Spouse Information
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Name
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Occupation
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Designation
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Home District
+                            </h4>
+
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Organization
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Location
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>    @*end spouse information*@
+
+
+
+        <div class="con-header">
+            Permanent Address 
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Village/House
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Post office
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Police station 
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                District 
+                            </h4>
+
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Telephone 
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>  @*end permanent address*@
+
+
+
+        <div class="con-header">
+            Present  Address
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Village/House
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Post office
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Police station
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                District
+                            </h4>
+
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Telephone
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div> @*end pesentnt address*@
+
+
+
+        <div class="con-header">
+            Children Information
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Name
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Date Of birth
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Sex
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="badge">New</span>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        <div class="con-header">
+            Office’s language Info 
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Language
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Read
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Unit
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <h4>
+                                    speak
+                                </h4>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="label label-default">New</span>
+                            </div>
+                        </div>
+                    </div>               
+            </div>
+        </div>
+
+        <div class="con-header">
+            Educational Qualification 
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Name of institute 
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Principal Subject 
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Degree
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Passing Year
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Result
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                CGPA/GPA
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="con-header">
+            Training information 
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Course 
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Title
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Institute
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Grade
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Position
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Country 
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="con-header">
+            Foreign Travel
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Country
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Purpose
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                From
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                To
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="con-header">
+            Posting Address 
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="resumebody">
+            <div class="row">
+                <div class="col-md-9">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Post
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Organization 
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                Country
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                From
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <h4>
+                                To
+                            </h4>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="label label-default">New</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        </div>
+
+                </div>
+                
+
+
+                    <div class="col-md-2 last">
+
+                    </div>
+                </div>
+

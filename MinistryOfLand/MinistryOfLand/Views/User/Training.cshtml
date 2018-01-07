@@ -1,0 +1,125 @@
+﻿@model MinistryOfLand.Models.TrainingInfo
+@{
+    ViewBag.Title = "Training";
+}
+
+<div class="row">
+    <div class="col-md-2 st">
+
+    </div>
+
+    <div class="col-md-8 ">
+        <div class="con-header">
+            Training 
+        </div>
+        <div class="under">
+
+        </div>
+        <div class="formbody">
+
+@using (Html.BeginForm("Training", "User", FormMethod.Post))
+    {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+                <form class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label for="Name" class="col-sm-4 control-label lbl">
+                            User Name
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.UserId)
+                            @Html.DropDownListFor(model => model.UserId, @ViewBag.UserAccountId as SelectList, "Select User", new { @class = " inputfil" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="TrainingType" class="col-sm-4 control-label lbl">
+                            Training Type
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.TrainingType)
+                            @Html.DropDownListFor(model => model.TrainingType, new List<SelectListItem>
+        {
+            new SelectListItem{ Text="Local Training", Value="Local"},
+            new SelectListItem{ Text="Foreign Training", Value="foreign"}
+        }, "Select", new { @class = " inputfil"})                          
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="TrainingLocation" class="col-sm-4 control-label lbl" >
+                            Training  Location
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.TrainingLocation)
+                            @Html.TextBoxFor(model => model.TrainingLocation, new { @class = "inputfil", @placeholder = "Training  Location"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Course" class="col-sm-4 control-label lbl">
+                            Course
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Course)
+                            @Html.TextBoxFor(model => model.Course, new { @class = "inputfil", @placeholder = "Course" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Title" class="col-sm-4 control-label lbl">
+                            Title
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Title)
+                            @Html.TextBoxFor(model => model.Title, new { @class = "from-control inputfil", @placeholder = "Titel"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Institute" class="col-sm-4 control-label lbl">
+                            Institute
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Institute)
+                            @Html.TextBoxFor(model => model.Institute, new { @class = "from-control inputfil", @placeholder = "Institute"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Grade" class="col-sm-4 control-label lbl">
+                            Grade
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Grade)
+                            @Html.TextBoxFor(model => model.Grade, new { @class = "from-control inputfil", @placeholder = "Grade"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Position" class="col-sm-4 control-label lbl">
+                            Position
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Position)
+                            @Html.TextBoxFor(model => model.Position, new { @class = "from-control inputfil", @placeholder = "Position"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Country" class="col-sm-4 control-label lbl">
+                            Country
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Country)
+                            @Html.TextBoxFor(model => model.Country, new { @class = "from-control inputfil", @placeholder = "Country" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2 text-center" style="margin-bottom:100px;">
+                            <input type="submit" name="submit" class="btn btn-default" value="Submit" style="margin-top: 30px;width: 175px;margin-left: 50px;font-weight:bold;" />
+                        </div>
+                    </div>
+                </form>
+}
+        </div>
+    </div>
+
+    <div class="col-md-2 last">
+
+    </div>
+</div>
+

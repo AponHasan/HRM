@@ -1,0 +1,678 @@
+﻿@model IEnumerable<Object>
+@{
+    Layout = null;
+    List<MinistryOfLand.Models.GeneralInfo> generalinfo = Model.ToList()[0] as List<MinistryOfLand.Models.GeneralInfo>;
+    List<MinistryOfLand.Models.ForeignTravle> ft = Model.ToList()[1] as List<MinistryOfLand.Models.ForeignTravle>;
+    List<MinistryOfLand.Models.EducationalInfo> edu = Model.ToList()[2] as List<MinistryOfLand.Models.EducationalInfo>;
+    List<MinistryOfLand.Models.LanguageInfo> lan = Model.ToList()[3] as List<MinistryOfLand.Models.LanguageInfo>;
+    List<MinistryOfLand.Models.PostingRecord> pr = Model.ToList()[4] as List<MinistryOfLand.Models.PostingRecord>;
+    List<MinistryOfLand.Models.Publication> pub = Model.ToList()[5] as List<MinistryOfLand.Models.Publication>;
+    List<MinistryOfLand.Models.Award> award = Model.ToList()[6] as List<MinistryOfLand.Models.Award>;
+    List<MinistryOfLand.Models.ChildrenInfo> chil = Model.ToList()[7] as List<MinistryOfLand.Models.ChildrenInfo>;
+    List<MinistryOfLand.Models.PromotionalParticular> pp = Model.ToList()[8] as List<MinistryOfLand.Models.PromotionalParticular>;
+    List<MinistryOfLand.Models.TrainingInfo> tra = Model.ToList()[9] as List<MinistryOfLand.Models.TrainingInfo>;
+    List<MinistryOfLand.Models.UserAccount> uc = Model.ToList()[10] as List<MinistryOfLand.Models.UserAccount>;
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserProfile</title>
+    <link href="~/Content/stylemen.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="icon" href="~/Content/Image/favicon.ico" type="image/gif" sizes="16x16">
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    @if (Session["LogedUserFullname"] != null)
+    {
+        <text>
+            Welcome @Session["LogedUserFullname"].ToString()
+        </text>
+    }
+
+
+    @Html.ActionLink("LogOut", "LogOut", "Admin")
+
+
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="col-md-8">
+            <div class="resumehead">
+                @*start resume header*@
+                <div class="col-md-9">
+                    <div class="resumehead-text">
+                        @foreach (var item in generalinfo)
+                        {
+                            <h2>@item.Name</h2>
+                            <p>@item.ContactPhone</p>
+                            <p>@item.Email</p>
+
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="resumephoto">
+                        @foreach (var item in uc)
+                        {
+                            <img src="~/@item.UserImage" class="img-thumbnail" width="100%" height="230" />
+                        }
+                    </div>
+                </div>
+            </div>  @*End resume header*@
+
+            <div class="resume-text">
+                <div class="col-md-9">
+                    @*start general information*@
+                    General information
+                    <a href="#">Request Edit</a>
+                </div>
+                <div class="under">
+                </div>
+                @foreach (var item in generalinfo)
+                {
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Name</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.Name</span></h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Father's Name</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.FathersName</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Mother Name</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.MothersName</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Home District </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.HomeDistrict</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Date of Broth </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.DateOfBirth</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Rank</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.Rank</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Position</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.Position</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Nationality </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.Nationality</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>NID Number</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.NIDNumber</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Cadre date </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.Cadre</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Sex</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.Gender</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Marital status </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.MarialStatus</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>LPR Date</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.LPRDate</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Join Date</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.JoiningDate</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Batch </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.CadreBatch</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Religion</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.Religion</span></h4>
+                        </div>
+                    </div>
+
+                    @*end general information*@
+
+                    <div class="con-header">
+                        @*start Spouse Information*@
+                        Spouse Information
+                    </div>
+                    <div class="under">
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Name</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.SpouseName</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Occupation</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.SpouseOccopation</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Designation</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.SpouseDesignation</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Home District </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.SpouseHomeDistrict</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Organization </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.SpouseOrganization</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumebody-text">
+                                <h4>Location</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>:<span class="badge">@item.SpouseOrgLocation</span></h4>
+                        </div>
+                    </div>
+                }
+            </div> @*end Spouse Information*@
+
+            <div class="resumebody">
+                <div class="con-header">
+                    @*start Children Information *@
+                    Children Information
+
+                </div>
+                <div class="under">
+
+                </div>
+
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Sex</th>
+                                <th>Date Of Birth</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in chil)
+                        {
+                            <tbody>
+                                <tr>
+
+                                    <td>@item.ChildrenName</td>
+                                    <td>@item.ChildrenSex</td>
+                                    <td>@item.ChildrenDOB</td>
+
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </div>
+
+            </div>     @*end Children Information*@
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Office’s language Info
+                    <a href="#">Request Edit</a>
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Reading</th>
+                                <th>Writing</th>
+                                <th>Speak</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in lan)
+                        {
+                            <tbody>
+                                <tr>
+
+                                    <td>@item.ReadSkills</td>
+                                    <td>@item.WriteSkills</td>
+                                    <td>@item.SpeakSkills</td>
+
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>          @*end Office’s language Info  *@
+
+
+            @*Educational Qualification  *@
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Educational Qualification
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Degree Title</th>
+                                <th>Principal Subject</th>
+                                <th>Passing Year</th>
+                                <th>Result</th>
+                                <th>Board</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in edu)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.DegreeTitel</td>
+                                    <td>@item.PrincicpalSubject</td>
+                                    <td>@item.InstituteName</td>
+                                    <td>@item.PassingYear</td>
+                                    <td>@item.Result</td>
+                                    <td>@item.Board</td>
+
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            @*end Educational Qualification  *@
+            @*start Training information   *@
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Training information
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Training type</th>
+                                <th>Title</th>
+                                <th>Institute</th>
+                                <th>Grade</th>
+                                <th>Position</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in tra)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.TrainingType</td>
+                                    <td>@item.Title</td>
+                                    <td>@item.Institute</td>
+                                    <td>@item.Grade</td>
+                                    <td>@item.Position</td>
+                                    <td>@item.Country</td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            @*end Training information   *@
+
+            @*start Travel *@
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Foreign Travel
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Country</th>
+                                <th>Purpose</th>
+                                <th>From</th>
+                                <th>TO</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in ft)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.Country</td>
+                                    <td>@item.Purpuse</td>
+                                    <td>@item.TFrom</td>
+                                    <td>@item.TTo</td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            @*end Travel *@
+            @*start Posting Address  *@
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Posting information
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Organization</th>
+                                <th>Country</th>
+                                <th>From</th>
+                                <th>TO</th>
+                                <th>Location</th>
+                                <th>Thana</th>
+                                <th>District</th>
+                                <th>Pay Scale</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in pr)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.Organization</td>
+                                    <td>@item.Country</td>
+                                    <td>@item.Pfrom</td>
+                                    <td>@item.PTo</td>
+                                    <td>@item.Location</td>
+                                    <td>@item.Thana</td>
+                                    <td>@item.District</td>
+                                    <td>@item.PayScal</td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            @*End Posting Address *@
+            @*start Publication  *@
+
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Publication
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Books</th>
+                                <th>Periodicals</th>
+                                <th>Monograph</th>
+                                <th>journal</th>
+                                <th>Description</th>
+                                <th>Date</th>
+
+                            </tr>
+                        </thead>
+                        @foreach (var item in pub)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.BooksTitle</td>
+                                    <td>@item.Periodicals</td>
+                                    <td>@item.Monograph</td>
+                                    <td>@item.Journal</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Date</td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            @*end Training information   *@
+
+            @*start Honors & Award  *@
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Honors & Award
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Title of award</th>
+                                <th>Ground</th>
+                                <th>Date</th>
+
+                            </tr>
+                        </thead>
+                        @foreach (var item in award)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.TitleOfaward</td>
+                                    <td>@item.Ground</td>
+                                    <td>@item.Date</td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            @*end Honors & Award *@
+
+
+
+            @*start Promotional Particular *@
+            <div class="resumebody">
+
+                <div class="con-header">
+                    Promotional Particular
+                </div>
+                <div class="under">
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead class="thead-default">
+                            <tr>
+
+                                <th>Rank</th>
+                                <th>Promotion</th>
+                                <th>G.O Date</th>
+                                <th>Natural of Promotion</th>
+                                <th>Pay Scale</th>
+
+
+                            </tr>
+                        </thead>
+                        @foreach (var item in pp)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.Rank</td>
+                                    <td>@item.Promotion</td>
+                                    <td>@item.GODate</td>
+                                    <td>@item.NaturalOfPromotion</td>
+                                    <td>@item.PayScal</td>
+
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+            @*end Promotional Particular *@
+
+
+        </div> @*end col-md-8*@
+
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+    <script src="~/Scripts/js/modernizr.js"></script>
+</body>
+</html>

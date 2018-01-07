@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MinistryOfLand.Models.TrainingInfo>
+
+@{
+    ViewBag.Title = "DataTraining";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Training</h2>
+<div class="clildren-table">
+    <table class="table">
+        <tr>
+            <th>
+                Training Location
+            </th>
+            <th>
+                Course
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Institute
+            </th>
+            <th>
+                Grade
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Training Type
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrainingLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Institute)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrainingType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserAccount.username)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditTraining", new { id = item.TrainingId }, new { @class = "edita" }) 
+                    @Html.ActionLink("Details", "DetailsTraining", new { id = item.TrainingId }, new { @class = "details" }) 
+                    @Html.ActionLink("Delete", "DeleteTraining", new { id = item.TrainingId }, new { @class = "deletea" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

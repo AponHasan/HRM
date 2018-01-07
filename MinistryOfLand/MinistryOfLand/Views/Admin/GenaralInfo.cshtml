@@ -1,0 +1,398 @@
+﻿@model IEnumerable<Object>
+@{
+    Layout = null;
+    List<MinistryOfLand.Models.GeneralInfo> generalinfo = Model.ToList()[0] as List<MinistryOfLand.Models.GeneralInfo>;
+    List<MinistryOfLand.Models.UserAccount> uc = Model.ToList()[1] as List<MinistryOfLand.Models.UserAccount>;
+   
+    ViewBag.Title = "GenaralInfo";
+    Layout = "~/Views/Shared/_Partial1Layout.cshtml";
+}
+<div class="row">
+    <div class="col-sm-2">
+        <div class="menu-option">
+            <div class="user-section-pic">
+                @foreach (var item in uc)
+                {
+                    <img src="~/@item.UserImage" height="200px" width="205px" />
+                }
+            </div>
+            <div class="user-text">
+                @foreach (var item in generalinfo)
+                {
+                    <h1>@item.Name</h1>
+                    <p>@item.ContactPhone</p>
+                    <p>@item.Email</p>
+                    <p>@item.Rank</p>
+                }
+            </div>
+            <div class="user-underline">
+
+            </div>
+            <div class="menu-left">
+                <ul>
+                    <li><a href="~/Admin/GenaralInfo">General info</a></li>
+                    <li><a href="~/Admin/Education">Education</a></li>
+                    <li><a href="~/Admin/Award">Award</a></li>
+                    <li><a href="~/Admin/Publication">Publication</a></li>
+                    <li><a href="~/Admin/Training">Training</a></li>
+                    <li><a href="~/Admin/Travle">Foreign Travle</a></li>
+                    <li><a href="~/Admin/Language">Language</a></li>
+                    <li><a href="~/Admin/Children">Children</a></li>
+                    <li><a href="~/Admin/PostingRecords">Posting Records</a></li>
+                    <li><a href="~/Admin/PromotionalParticulars">Promotional Particulars</a></li>                   
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-8">
+        <div class="col-sm-12">
+        <div class="resume-text">
+            <div class="col-md-9">
+                <h2>General Information</h2>
+            </div>
+            <div class="col-md-3">
+                <a href="~/Admin/Request"><h5>Request Edit</h5></a>
+            </div>
+        </div>
+        <div class="underline">
+
+        </div>
+        @foreach (var item in generalinfo)
+        {
+            <div class="col-md-12">
+                <div class="resume-form">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Name
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Name</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Father's Name
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.FathersName</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Mother's Name
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.MothersName</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Date Of Birth
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.DateOfBirth</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Nationality
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Nationality</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                NID Number
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.NIDNumber</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Gender
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Gender</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Blood Group
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.BloodGroup</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Contact Number
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.ContactPhone</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Cell Phone
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.CellPhone</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Email
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Email</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Present Address
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.PresentAddress</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Permanent Address
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.PermanentAddress</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Home District
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.HomeDistrict</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Religion
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Religion</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Marital Status
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.MarialStatus</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Joining Date
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.JoiningDate</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Rank
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Rank</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Possition
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Position</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                LPR Date
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.LPRDate</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Cadre
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.Cadre</span>
+                        </div>
+                    </div>                     
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="resumeform-text">
+                                Cadre Batch
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <b>:</b> <span class="badge">@item.CadreBatch</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        }
+    </div>
+        
+        <div class="col-sm-12">
+@foreach (var item in generalinfo)
+{
+    if (@item.MarialStatus == "Married")
+    {
+            <div class="resume-text">
+                
+                <div class="col-md-9">
+                    <h2>Spouse Information</h2>
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+            </div>
+            <div class="underline">
+
+            </div>
+           
+                <div class="col-md-12">
+                    <div class="resume-form">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <div class="resumeform-text">
+                                    Name
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <b>:</b> <span class="badge">@item.SpouseName</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <div class="resumeform-text">
+                                    Occopation
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <b>:</b> <span class="badge">@item.SpouseOccopation</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <div class="resumeform-text">
+                                    Designation
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <b>:</b> <span class="badge">@item.SpouseDesignation</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <div class="resumeform-text">
+                                    Home District
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <b>:</b> <span class="badge">@item.SpouseHomeDistrict</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <div class="resumeform-text">
+                                    Organization
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <b>:</b> <span class="badge">@item.SpouseOrganization</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <div class="resumeform-text">
+                                    Location
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <b>:</b> <span class="badge">@item.SpouseOrgLocation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*}
+                else if(@item.MarialStatus=="Unmarried")
+                {
+                    <div class="col-md-12">
+                            <div class="col-md-2">
+                                <div class="resumeform-text">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <b></b> <span class="badge">You Are UNmarried</span>
+                            </div>
+                        <div class="col-md-2">
+                            <div class="resumeform-text">
+
+                            </div>
+                        </div>
+                        </div>*@
+                }
+            }
+        </div>
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+</div>

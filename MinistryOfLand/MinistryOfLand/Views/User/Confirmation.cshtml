@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmation</title>
+    <link href="~/Content/stylemen.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="cmsg"> 
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <div class="confirmmsgdesign">
+                <h1>Your Data have been added successfully !</h1>
+                <p style="font-size: 20px; color: #565656; padding-bottom: 15px;">If you add more information for the same content press <b style="color:green;">Add More</b> , otherwise press <b style="color:green;">Go home</b>.</p>
+                <div class="cmbtn">
+                   
+                        @*<a href="Request.UrlReferrer"> <div class="returnbtn">Add More</div></a>*@
+                        @Html.ActionLink("Add More", null, null, null, new { href = Request.UrlReferrer, @class = "returnbtn" })
+                        @Html.ActionLink("Go Home", "Index", "User", new { @class = "homebtn" })
+                       
+                        @*@Html.ActionLink("Go Back Home page", "Index", "User")*@
+
+                    @*<a href="~/User/Index"> <div class="homebtn">Go Home</div></a>*@
+                    
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        
+    </div>
+</body>
+</html>

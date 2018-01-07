@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c084b157f9b4bb0bbfe63b9bb942fa4" Name="Diagram1">
+        <EntityTypeShape EntityType="HRM_DatabaseModel.AdditionalInfo" Width="1.5" PointX="3" PointY="24.5" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.Address" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.Award" Width="1.5" PointX="3" PointY="6.875" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.ChildrenInfo" Width="1.5" PointX="3" PointY="28" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.EducationalInfo" Width="1.5" PointX="3" PointY="9.75" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.ForeignTravle" Width="1.5" PointX="3" PointY="41" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.GeneralInfo" Width="1.5" PointX="3" PointY="16.625" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.LanguageInfo" Width="1.5" PointX="3" PointY="13.5" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.OthersService" Width="1.5" PointX="3" PointY="44.125" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.PostingAddress" Width="1.5" PointX="3" PointY="47.625" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.PostingRecord" Width="1.5" PointX="3" PointY="51" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.PromotionalParticular" Width="1.5" PointX="3" PointY="34.25" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.PromotionalP" Width="1.5" PointX="3" PointY="30.875" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.Publication" Width="1.5" PointX="3" PointY="37.5" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.ServiceHistory" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.TrainingInfo" Width="1.5" PointX="3" PointY="55" />
+        <EntityTypeShape EntityType="HRM_DatabaseModel.UserAccount" Width="1.5" PointX="0.75" PointY="28.375" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_AdditionalInfo_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_Award_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_ChildrenInfo_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_EducationalInfo_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_ForeignTravle_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_GeneralInfo_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_LanguageInfo_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_OthersService_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_PostingAddress_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_PostingRecords_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_PromotionalParticular_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_PromotionalP_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_Publication_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_ServiceHistory_UserAccount" />
+        <AssociationConnector Association="HRM_DatabaseModel.FK_TrainingInfo_UserAccount" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

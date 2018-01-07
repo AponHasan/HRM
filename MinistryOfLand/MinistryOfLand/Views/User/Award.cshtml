@@ -1,0 +1,79 @@
+﻿@model MinistryOfLand.Models.Award
+           
+@{
+    ViewBag.Title = "Award";
+}
+
+<div class="row">
+    <div class="col-md-2 st">
+
+    </div>
+
+    <div class="col-md-8 ">
+        <div class="con-header">
+            Honors & Awards
+        </div>
+        <div class="under">
+        </div>    
+            <div class="formbody">
+@using (Html.BeginForm("Award", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+                <form class="form-horizontal" method="post">     
+                  
+                    <div class="form-group">
+                        <label for="Name" class="col-sm-4 control-label lbl">
+                            User ID
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.UserId)
+                            @Html.DropDownListFor(model => model.UserId, @ViewBag.UserAccountId as SelectList, "Select User", new { @class = "from-control inputfil" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="TitleOfaward" class="col-sm-4 control-label lbl">
+                            Title Of Award
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.TitleOfaward)
+                            @Html.TextBoxFor(model => model.TitleOfaward, new { @class = "from-control inputfil", @placeholder = "Title Of Award" })
+                           
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label for="MothersName" class="col-sm-4 control-label lbl" >
+                            Ground
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Ground)
+                            @Html.TextBoxFor(model => model.Ground, new { @class = "from-control inputfil", @placeholder = "Ground"})
+                           
+                        </div>
+                    </div> 
+                   
+                    <div class="form-group">
+                        <label for="lprdate" class="col-sm-4 control-label lbl" >
+                            Date (mm/dd/yyyy)
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.Date)
+                            @Html.TextBoxFor(model => model.Date, "{0:yyyy-MM-dd}", new { @class = "from-control inputfil", @placeholder = "(mm/dd/yyyy)", type = "Date"})
+                           
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2 text-center" style="margin-bottom:100px;">
+                            <input type="submit" name="Submit" class="btn btn-default" value="submit" style="margin-top: 30px;width: 175px;margin-left: 50px;font-weight:bold;" />
+                        </div>
+                    </div>
+                </form>
+}
+            </div>
+        </div>
+
+        <div class="col-md-2 last">
+        </div>
+    </div>
+
+

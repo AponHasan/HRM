@@ -1,0 +1,87 @@
+﻿@model MinistryOfLand.Models.PromotionalParticular
+
+@{
+    ViewBag.Title = "EditPromotionalParticular";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-sm-2">
+
+</div>
+<div class="col-sm-8">
+    <h2>EditPromotionalParticular</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>PromotionalParticular</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.PromotionalParticularId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Rank, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Rank)
+                    @Html.ValidationMessageFor(model => model.Rank)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Promotion, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Promotion)
+                    @Html.ValidationMessageFor(model => model.Promotion)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.GODate, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GODate)
+                    @Html.ValidationMessageFor(model => model.GODate)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NaturalOfPromotion, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NaturalOfPromotion)
+                    @Html.ValidationMessageFor(model => model.NaturalOfPromotion)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PayScal, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PayScal)
+                    @Html.ValidationMessageFor(model => model.PayScal)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.userId, "userId", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.userId)*@
+                    @Html.TextBoxFor(model => model.userId, new { @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.userId)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "DataPromotionalParticular")
+    </div>
+
+</div>
+<div class="col-sm-2">
+
+</div>

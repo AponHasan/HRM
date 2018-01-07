@@ -1,0 +1,78 @@
+﻿@model MinistryOfLand.Models.Award
+
+@{
+    ViewBag.Title = "EditAward";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-sm-2">
+
+</div>
+<div class="col-sm-8">
+    <h2>Edit Award</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.AwardId)
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Award Title
+                </label>              
+                <div class="col-md-7">
+                    @Html.TextBoxFor(model => model.TitleOfaward, new { @class = "from-control inputfil" })
+                    @Html.ValidationMessageFor(model => model.TitleOfaward)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Ground
+                </label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(model => model.Ground, new { @class = "from-control inputfil" })
+                    @Html.ValidationMessageFor(model => model.Ground)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    Date (mm/dd/yyyy)
+                </label>
+               <div class="col-md-7">
+                    @Html.TextBoxFor(model => model.Date, new { @class = "from-control inputfil" })
+                    @Html.ValidationMessageFor(model => model.Date)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="TrainingLocation" class="col-sm-2 control-label lbl">
+                    User Id
+                </label>
+                <div class="col-md-7">
+                    @Html.TextBoxFor(model => model.UserId, new { @class = "from-control inputfil", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.UserId)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" style="margin-top: 30px;width: 175px;margin-left: 50px;font-weight:bold;" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="back">
+        @Html.ActionLink("Back to List", "DataAward")
+    </div>
+
+</div>
+<div class="col-sm-2">
+
+</div>
+

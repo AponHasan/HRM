@@ -1,0 +1,170 @@
+﻿@model MinistryOfLand.Models.RequestToChange
+@{
+    ViewBag.Title = "GenaralInfo";
+    Layout = "~/Views/Shared/_Partial1Layout.cshtml";
+}
+@*<!DOCTYPE html>
+<html>*@
+@*<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Request</title>
+    <link href="~/Content/stylemen.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/Style1.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="icon" href="~/Content/Image/favicon.ico" type="image/gif" sizes="16x16">
+    <script src="js/modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>*@
+@*<body>*@
+        <div>
+            @*<div class="col-md-12">
+                <div class="banner">
+                    <div class="col-md-3">
+                        
+                            <div class="banner-logo">
+                                <img src="~/Content/Image/logo2.png" style="height: auto; width: 245px; padding-top: 6px;" />
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="welcome-text">
+                            <marquee><img src="~/Content/Image/title.png" /> </marquee>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="logout">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>*@
+            <div class="cforms">
+                @*<div class="row">
+                    <div class="col-sm-3">
+
+                    </div>
+                    <div class="col-sm-6">
+                        <h1>Submit Your Request !</h1>
+
+                    </div>
+                    <div class="col-sm-3">
+
+                    </div>
+                
+                    </div>*@
+                <div class="msg">
+                    @if (!string.IsNullOrEmpty(ViewBag.Msg))
+                    {
+                        <script type="text/javascript">
+                            alert("@ViewBag.Msg");
+                        </script>
+                    }
+                </div>
+                <div class="col-sm-2">
+                    <div class="menu-option">                     
+                       
+                        <div class="menu-left">
+                            <ul>
+                                <li><a href="~/Admin/GenaralInfo">General info</a></li>
+                                <li><a href="~/Admin/Education">Education</a></li>
+                                <li><a href="~/Admin/Award">Award</a></li>
+                                <li><a href="~/Admin/Publication">Publication</a></li>
+                                <li><a href="~/Admin/Training">Training</a></li>
+                                <li><a href="~/Admin/Travle">Foreign Travle</a></li>
+                                <li><a href="~/Admin/Language">Language</a></li>
+                                <li><a href="~/Admin/Children">Children</a></li>
+                                <li><a href="~/Admin/PostingRecords">Posting Records</a></li>
+                                <li><a href="~/Admin/PromotionalParticulars">Promotional Particulars</a></li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+
+                </div>
+                <div class="col-sm-6">
+                    <h1>Submit Your Request !</h1>
+                    <div class="formpos">                       
+                        @using (Html.BeginForm())
+                        {
+                            <div class="col-sm-12">
+                                <div class="fs">
+                                    <label>Enter User Name</label>
+                                    <div class="valid">
+                                        @Html.ValidationMessageFor(model => model.Name)
+                                    </div>
+                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = Html.DisplayNameFor(n => n.Name) })
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="fs">
+                                    <label>Enter User Email</label>
+                                    <div class="valid">
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                    </div>
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(n => n.Email) })
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="fs">
+                                    <label>Select Field</label>
+                                    <div class="valid">
+                                        @Html.ValidationMessageFor(model => model.Category)
+                                    </div>
+                                    @* @Html.TextBoxFor(model => model.Category, new { @class = "form-control", placeholder = Html.DisplayNameFor(n => n.Category) })*@
+                                    @Html.DropDownListFor(model => model.Category, new List<SelectListItem>
+        {
+            new SelectListItem{ Text="Genarel Information", Value="Genarel Information"},
+            new SelectListItem{ Text="Educational Information", Value="Educational Information"},
+            new SelectListItem{ Text="Language Information", Value="Language Information"},
+            new SelectListItem{ Text="Posting", Value="Posting"},
+            new SelectListItem{ Text="Training", Value="Training"},
+            new SelectListItem{ Text="Promotiona Particular", Value="Promotiona Particular"},
+            new SelectListItem{ Text="Publication", Value="Publication"},
+            new SelectListItem{ Text="Award", Value="Award"},
+            new SelectListItem{ Text="Children", Value="Children"},
+            new SelectListItem{ Text="Foreign Travle", Value="Foreign Travle"}
+            
+        }, "Select Field", new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="fs">
+                                    <label>Mobile Number</label>
+                                    <div class="valid">
+                                        @Html.ValidationMessageFor(model => model.Mobile)
+                                    </div>
+                                    @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control", placeholder = Html.DisplayNameFor(n => n.Mobile) })
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="fs">
+                                    <label>Changing Description</label>
+                                    <div class="valid">
+                                        @Html.ValidationMessageFor(model => model.Message)
+                                    </div>
+                                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control", placeholder = Html.DisplayNameFor(n => n.Message) })
+                                </div>
+                            </div>
+                            <div class="btns col-sm-12">
+                                <p>Required Fields*</p>
+                                <a href="#"><input type="submit" name="submit" class="btn btn-default" value="Request Send" /></a>
+                            </div>                           
+                        }
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>            
+        </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+    <script src="~/Scripts/js/modernizr.js"></script>
+@*</body>
+</html>*@

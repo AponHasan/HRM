@@ -1,0 +1,259 @@
+﻿@model MinistryOfLand.Models.GeneralInfo
+
+@{
+    ViewBag.Title = "DetailsGeneralInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details GeneralInfo</h2>
+
+<div>
+    <h4>GeneralInfo</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            Fathers Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FathersName)
+        </dd>
+
+        <dt>
+            Mothers Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MothersName)
+        </dd>
+
+        <dt>
+            Date Of Birth
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            Nationality
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            NID Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIDNumber)
+        </dd>
+
+        <dt>
+            Gender
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            Blood Group
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+        <dt>
+            Contact Phone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactPhone)
+        </dd>
+
+        <dt>
+            Cell Phone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellPhone)
+        </dd>
+
+        <dt>
+             Religion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religion)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Present Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentAddress)
+        </dd>
+
+        <dt>
+            Permanent Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PermanentAddress)
+        </dd>
+
+        <dt>
+            Home District
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeDistrict)
+        </dd>
+
+        <dt>
+            Marial Status
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarialStatus)
+        </dd>
+
+        <dt>
+            Spouse Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpouseName)
+        </dd>
+
+        <dt>
+            Spouse Occopation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpouseOccopation)
+        </dd>
+
+        <dt>
+            Spouse Designation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpouseDesignation)
+        </dd>
+
+        <dt>
+            Spouse Home District
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpouseHomeDistrict)
+        </dd>
+
+        <dt>
+            Spouse Organization
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpouseOrganization)
+        </dd>
+
+        <dt>
+            Spouse Organization Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpouseOrgLocation)
+        </dd>
+
+        <dt>
+            Joining date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JoiningDate)
+        </dd>
+
+        <dt>
+            Rank
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rank)
+        </dd>
+
+        <dt>
+            Possition
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt>
+            LPR Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LPRDate)
+        </dd>
+
+        <dt>
+            Cadre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cadre)
+        </dd>
+
+        <dt>
+            Cadre Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CadreDate)
+        </dd>
+
+        <dt>
+            Cadre Batch
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CadreBatch)
+        </dd>
+
+        <dt>
+            User Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.username)
+        </dd>
+
+    </dl>
+</div>
+<p style="margin-bottom:50px;">
+    @Html.ActionLink("Edit", "EditGeneralInfo", new { id = Model.GeneralInfoID }, new { @class = "edita" }) |
+    @Html.ActionLink("Back to List", "DataGenaralInfo", new { @class = "bactolist" })
+</p>

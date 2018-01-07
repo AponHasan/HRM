@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRM_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdditionalInfo">
+    <Key>
+      <PropertyRef Name="AInfID" />
+    </Key>
+    <Property Name="AInfID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JoiningDate" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Rank" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="LPRDate" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Cadre" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CadreDate" Type="date" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Award">
+    <Key>
+      <PropertyRef Name="AwardId" />
+    </Key>
+    <Property Name="AwardId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleOfaward" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Ground" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChildrenInfo">
+    <Key>
+      <PropertyRef Name="ChildrenInfoId" />
+    </Key>
+    <Property Name="ChildrenInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChildrenName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ChildrenDOB" Type="nvarchar" MaxLength="500" />
+    <Property Name="ChildrenSex" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EducationalInfo">
+    <Key>
+      <PropertyRef Name="EducationalQId" />
+    </Key>
+    <Property Name="EducationalQId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DegreeTitel" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="InstituteName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PassingYear" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PrincicpalSubject" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Result" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ForeignTravle">
+    <Key>
+      <PropertyRef Name="ForeignTravelId" />
+    </Key>
+    <Property Name="ForeignTravelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Purpuse" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="TFrom" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="TTo" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GeneralInfo">
+    <Key>
+      <PropertyRef Name="GeneralInfoID" />
+    </Key>
+    <Property Name="GeneralInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="FathersName" Type="nvarchar" MaxLength="500" />
+    <Property Name="MothersName" Type="nvarchar" MaxLength="500" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NIDNumber" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="BloodGroup" Type="nvarchar" MaxLength="500" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="500" />
+    <Property Name="Religion" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="PresentAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PermanentAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HomeDistrict" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="MarialStatus" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SpouseName" Type="nvarchar" MaxLength="500" />
+    <Property Name="SpouseOccopation" Type="nvarchar" MaxLength="500" />
+    <Property Name="SpouseDesignation" Type="nvarchar" MaxLength="500" />
+    <Property Name="SpouseHomeDistrict" Type="nvarchar" MaxLength="500" />
+    <Property Name="SpouseOrganization" Type="nvarchar" MaxLength="500" />
+    <Property Name="SpouseOrgLocation" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LanguageInfo">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReadSkil" Type="nvarchar" MaxLength="500" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="500" />
+    <Property Name="SpeakSkil" Type="nvarchar" MaxLength="500" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PostingRecords">
+    <Key>
+      <PropertyRef Name="PostingId" />
+    </Key>
+    <Property Name="PostingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Organization" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Thanka" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="District" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Pfrom" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PTo" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PayScal" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PostingDate" Type="date" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PromotionalP">
+    <Key>
+      <PropertyRef Name="PromotionalPId" />
+    </Key>
+    <Property Name="PromotionalPId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rank" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Promotion" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="GODate" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NaturalOFPromotion" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PayScal" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Publication">
+    <Key>
+      <PropertyRef Name="PublicationId" />
+    </Key>
+    <Property Name="PublicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BooksTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Periodicals" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Monograph" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Journal" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TrainingInfo">
+    <Key>
+      <PropertyRef Name="TrainingId" />
+    </Key>
+    <Property Name="TrainingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainingLocation" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Course" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Institute" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AdditionalInfo_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="AdditionalInfo" Type="Self.AdditionalInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AdditionalInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Award_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="Award" Type="Self.Award" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Award">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChildrenInfo_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="ChildrenInfo" Type="Self.ChildrenInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ChildrenInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EducationalInfo_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="EducationalInfo" Type="Self.EducationalInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="EducationalInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ForeignTravle_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="ForeignTravle" Type="Self.ForeignTravle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ForeignTravle">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GeneralInfo_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="GeneralInfo" Type="Self.GeneralInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="GeneralInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LanguageInfo_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="LanguageInfo" Type="Self.LanguageInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="LanguageInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostingRecords_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="PostingRecords" Type="Self.PostingRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PostingRecords">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromotionalP_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="PromotionalP" Type="Self.PromotionalP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PromotionalP">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publication_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrainingInfo_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="TrainingInfo" Type="Self.TrainingInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TrainingInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRM_DatabaseModelStoreContainer">
+    <EntitySet Name="AdditionalInfo" EntityType="Self.AdditionalInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChildrenInfo" EntityType="Self.ChildrenInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EducationalInfo" EntityType="Self.EducationalInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForeignTravle" EntityType="Self.ForeignTravle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GeneralInfo" EntityType="Self.GeneralInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LanguageInfo" EntityType="Self.LanguageInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostingRecords" EntityType="Self.PostingRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PromotionalP" EntityType="Self.PromotionalP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainingInfo" EntityType="Self.TrainingInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AdditionalInfo_UserAccount" Association="Self.FK_AdditionalInfo_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="AdditionalInfo" EntitySet="AdditionalInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Award_UserAccount" Association="Self.FK_Award_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="Award" EntitySet="Award" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChildrenInfo_UserAccount" Association="Self.FK_ChildrenInfo_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="ChildrenInfo" EntitySet="ChildrenInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EducationalInfo_UserAccount" Association="Self.FK_EducationalInfo_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="EducationalInfo" EntitySet="EducationalInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ForeignTravle_UserAccount" Association="Self.FK_ForeignTravle_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="ForeignTravle" EntitySet="ForeignTravle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GeneralInfo_UserAccount" Association="Self.FK_GeneralInfo_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="GeneralInfo" EntitySet="GeneralInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LanguageInfo_UserAccount" Association="Self.FK_LanguageInfo_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="LanguageInfo" EntitySet="LanguageInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostingRecords_UserAccount" Association="Self.FK_PostingRecords_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="PostingRecords" EntitySet="PostingRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromotionalP_UserAccount" Association="Self.FK_PromotionalP_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="PromotionalP" EntitySet="PromotionalP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publication_UserAccount" Association="Self.FK_Publication_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="Publication" EntitySet="Publication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrainingInfo_UserAccount" Association="Self.FK_TrainingInfo_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="TrainingInfo" EntitySet="TrainingInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

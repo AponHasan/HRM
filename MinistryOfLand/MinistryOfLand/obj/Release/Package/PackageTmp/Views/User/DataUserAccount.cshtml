@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MinistryOfLand.Models.UserAccount>
+    @{
+        ViewBag.Title = "DataUserAccount";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    
+    <div class="clildren-table">
+        <h2>DataUserAccount</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    Password
+                </th>
+                <th>
+                    Mail
+                </th>
+                <th>
+                    User Type
+                </th>
+
+                <th>Action</th>
+            </tr>
+            @foreach(var item in Model)
+            {
+                <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserType)
+                </td>               
+                <td>
+                    @Html.ActionLink("Edit", "EditUser", new { id = item.userId }, new { @class = "edita" }) 
+                    @Html.ActionLink("Details", "DetailsUser", new { id = item.userId }, new { @class = "details" }) 
+                    @Html.ActionLink("Delete", "DeleteUser", new { id = item.userId }, new { @class = "deletea" })
+                </td>
+            </tr>
+            }
+        </table>
+   </div>
+

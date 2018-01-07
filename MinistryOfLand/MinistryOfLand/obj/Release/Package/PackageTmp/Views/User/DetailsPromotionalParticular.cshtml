@@ -1,0 +1,67 @@
+﻿@model MinistryOfLand.Models.PromotionalParticular
+
+@{
+    ViewBag.Title = "DetailsPromotionalParticular";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details Promotional Particular</h2>
+
+<div>
+    <h4>Promotional Particular</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Rank
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rank)
+        </dd>
+
+        <dt>
+            Promotion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promotion)
+        </dd>
+
+        <dt>
+            G/O Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GODate)
+        </dd>
+
+        <dt>
+            Natural Of Promotion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NaturalOfPromotion)
+        </dd>
+
+        <dt>
+            Pay Scale
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayScal)
+        </dd>
+
+        <dt>
+            User Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditPostingRecords", new { id = Model.PromotionalParticularId }, new { @class = "edita" }) |
+    @Html.ActionLink("Back to List", "DataPromotionalParticular", new { @class = "bactolist" })
+</p>

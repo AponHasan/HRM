@@ -1,0 +1,99 @@
+﻿@model MinistryOfLand.Models.PostingRecord
+
+@{
+    ViewBag.Title = "DetailsPostingRecords";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details Posting Records</h2>
+
+<div>
+    <h4>Posting Record</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Organization
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organization)
+        </dd>
+
+        <dt>
+            Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            Thana
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thana)
+        </dd>
+
+        <dt>
+            District
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District)
+        </dd>
+
+        <dt>
+            Posting From
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pfrom)
+        </dd>
+
+        <dt>
+           Posting To
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTo)
+        </dd>
+
+        <dt>
+            pay Scale
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayScal)
+        </dd>
+
+        <dt>
+            Posting Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostingDate)
+        </dd>
+
+        <dt>
+            Country
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            User Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditPostingRecords", new { id = Model.PostingId }, new { @class = "edita" }) |
+    @Html.ActionLink("Back to List", "DataPostingRecords", new { @class = "bactolist" })
+</p>

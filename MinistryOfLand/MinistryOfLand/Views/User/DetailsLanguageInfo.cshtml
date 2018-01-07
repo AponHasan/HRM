@@ -1,0 +1,58 @@
+﻿@model MinistryOfLand.Models.LanguageInfo
+
+@{
+    ViewBag.Title = "DetailsLanguageInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetailsLanguageInfo</h2>
+
+<div>
+    <h4>LanguageInfo</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Language
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+        <dt>
+            Reading Skills
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadSkills)
+        </dd>
+
+        <dt>
+            Writing Skills
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WriteSkills)
+        </dd>
+
+        <dt>
+             Speaking Skills
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpeakSkills)
+        </dd>
+
+        <dt>
+            User name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditLanguageInfo", new { id = Model.LanguageId }, new { @class = "edita" }) |
+    @Html.ActionLink("Back to List", "DataLanguageInfo", new { @class = "bactolist" })
+</p>

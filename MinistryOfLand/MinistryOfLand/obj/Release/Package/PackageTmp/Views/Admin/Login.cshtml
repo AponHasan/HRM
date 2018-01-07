@@ -1,0 +1,47 @@
+﻿@model MinistryOfLand.Models.UserAccount
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_PartialLayout.cshtml";
+}
+<div class="logintemplate">
+    @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+       
+        <div class="login-wrap">
+            <div class="error">
+                @if (TempData["wrong"] != null)
+                {
+                    <p class="errorMessage" >@TempData["wrong"]</p>
+                }
+            </div>
+
+            <div class="login-html">
+                
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">User Login</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            @Html.TextBoxFor(model => model.username, new { @class = "from-control loginun", @placeholder = "Name" })
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            @Html.TextBoxFor(model => model.password, new { @class = "from-control loginun", @placeholder = "Password", type = "Password" })
+                        </div>
+
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign In">
+                        </div>
+                        <div class="forgetp">
+                            @Html.ActionLink("Forget Password", "ForgetUserPassword", "Admin")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

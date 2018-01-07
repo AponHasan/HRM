@@ -1,0 +1,80 @@
+﻿@model MinistryOfLand.Models.ChildrenInfo
+@{
+    ViewBag.Title = "ChildrenInfo";
+   
+}
+<div class="row">
+    <div class="col-md-2 st">
+
+    </div>
+
+    <div class="col-md-8 ">
+        <div class="con-header">
+            Children Information
+        </div>
+        <div class="under">
+        </div>
+        <div class="formbody">
+            @using (Html.BeginForm("ChildrenInfo", "User", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <form class="form-horizontal" method="post">
+
+                    <div class="form-group">
+                        <label for="Name" class="col-sm-4 control-label lbl" >
+                            User ID
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.userId)
+                            @Html.DropDownListFor(model => model.userId, @ViewBag.UserAccountId as SelectList, "Select User", new { @class = "from-control inputfil" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ChildrenName" class="col-sm-4 control-label lbl">
+                            Name
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.ChildrenName)
+                            @Html.TextBoxFor(model => model.ChildrenName, new { @class = "from-control inputfil", @placeholder = "Name" })
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lprdate" class="col-sm-4 control-label lbl" >
+                            Date Of Birth (mm/dd/yyyy)
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.ChildrenDOB)
+                            @Html.TextBoxFor(model => model.ChildrenDOB, "{0:yyyy-MM-dd}", new { @class = "from-control inputfil", @placeholder = "(mm/dd/yyyy)", type = "Date" })
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="MothersName" class="col-sm-4 control-label lbl">
+                            Gender
+                        </label>
+                        <div class="col-sm-7">
+                            @Html.ValidationMessageFor(model => model.ChildrenSex)
+                           @Html.DropDownListFor(model => model.ChildrenSex, new List<SelectListItem>
+        {
+            new SelectListItem{ Text="Male", Value="Male"},
+            new SelectListItem{ Text="Female", Value="Female"}
+        }, "Gender Select", new { @class = "from-control inputfil" })
+                        </div>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2 text-center" style="margin-bottom:100px;">
+                            <input type="submit" name="submit" class="btn btn-default" value="Submit" style="margin-top: 30px;width: 175px;margin-left: 50px;font-weight:bold;" />
+                        </div>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+
+    <div class="col-md-2 last">
+    </div>
+</div>

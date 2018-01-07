@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MinistryOfLand.Models.Publication>
+
+@{
+    ViewBag.Title = "DataPublication";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Publication</h2>
+<div class="clildren-table">
+    <table class="table">
+        <tr>
+            <th>
+                Books Title
+            </th>
+            <th>
+                Periodicals
+            </th>
+            <th>
+                Monograph
+            </th>
+            <th>
+                Journal
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BooksTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Periodicals)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monograph)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Journal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserAccount.username)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditPublication", new { id = item.PublicationId }, new { @class = "edita" }) 
+                    @Html.ActionLink("Details", "DetailsPublication", new { id = item.PublicationId }, new { @class = "details" }) 
+                    @Html.ActionLink("Delete", "DeletePublication", new { id = item.PublicationId }, new { @class = "deletea" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MinistryOfLand.Models.EducationalInfo>
+
+@{
+    ViewBag.Title = "DataEducation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="clildren-table">
+    <h2>Education</h2>
+    <table class="table">
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th>
+                Degree Titel
+            </th>
+            <th>
+                Institute Name
+            </th>
+            <th>
+                Passing Year
+            </th>
+            <th>
+                Princicpal Subject
+            </th>
+            <th>
+                Board
+            </th>
+            <th>
+                CGPA/GPA
+            </th>
+            <th>
+                Out Of
+            </th>          
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserAccount.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DegreeTitel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstituteName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassingYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrincicpalSubject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Board)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Result)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OutOf)
+                </td>                
+                <td>
+                    @Html.ActionLink("Edit", "EditEducation", new { id = item.EducationalQId }, new { @class = "edita" }) 
+                    @Html.ActionLink("Details", "DetailsEducation", new { id = item.EducationalQId }, new { @class = "details" }) 
+                    @Html.ActionLink("Delete", "DeleteEducation", new { id = item.EducationalQId }, new { @class = "deletea" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
